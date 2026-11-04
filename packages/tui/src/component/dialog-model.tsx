@@ -14,6 +14,7 @@ import { useNewDesigns } from "../config"
 import { DialogFreeModels } from "./dialog-model-free"
 import { FavoriteMarker, ModelDetail, isFreeModel, prioritizeFavorites, sortModelOptions } from "./model-options"
 import { DialogUsage, useUsageLimits } from "./usage"
+import { DialogLimits } from "./dialog-limits"
 import { formatDollars, usageLevel } from "../util/usage-limits"
 
 export function DialogModel(props: { providerID?: string }) {
@@ -233,6 +234,12 @@ function DialogConnectedModels(props: {
           selection: "none",
           hidden: !limits.info(),
           onTrigger: () => dialog.replace(() => <DialogUsage />),
+        },
+        {
+          command: "model.dialog.limits",
+          title: newDesigns() ? "limits" : "Limits",
+          selection: "none",
+          onTrigger: () => dialog.replace(() => <DialogLimits />),
         },
         {
           command: "model.dialog.favorite",
