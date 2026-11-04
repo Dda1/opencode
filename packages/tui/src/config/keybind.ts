@@ -171,6 +171,7 @@ export const Definitions = {
   "model.cycle_favorite_reverse": keybind("none", "Previous favorite model"),
   "mcp.list": keybind("none", "List MCP servers"),
   "usage.show": keybind("none", "View usage limits"),
+  "limits.show": keybind("none", "View limits for all models"),
   "provider.connect": keybind("none", "Connect integration"),
   "agent.list": keybind("<leader>a", "List agents"),
   "agent.cycle": keybind("shift+tab", "Next agent"),

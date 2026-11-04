@@ -66,6 +66,7 @@ import { DialogModel } from "./component/dialog-model"
 import { useConnected } from "./component/use-connected"
 import { DialogMcp } from "./component/dialog-mcp"
 import { DialogUsage } from "./component/usage"
+import { DialogLimits } from "./component/dialog-limits"
 import { DialogStatus } from "./component/dialog-status"
 import { DialogConfig } from "./component/dialog-config"
 import { DialogDebug } from "./component/dialog-debug"
@@ -157,6 +158,7 @@ const appBindingCommands = [
   "agent.list",
   "mcp.list",
   "usage.show",
+  "limits.show",
   "agent.cycle",
   "agent.cycle.reverse",
   "variant.cycle",
@@ -962,6 +964,15 @@ function App() {
         slash: { name: "usage" },
         run: () => {
           dialog.replace(() => <DialogUsage />)
+        },
+      },
+      {
+        name: "limits.show",
+        title: "View model limits",
+        category: "Agent",
+        slash: { name: "limits" },
+        run: () => {
+          dialog.replace(() => <DialogLimits />)
         },
       },
       {
